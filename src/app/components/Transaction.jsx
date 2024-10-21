@@ -33,12 +33,16 @@ const Transaction = () => {
             toast.success('Транзакция успешно обработана')
         }
     }
+
+    const handleBack = () => {
+        navigate('/')
+    } 
     
     return (
         <div className='transaction-screen'>
             <ToastContainer/>
         <header>
-            <button onClick={navigate('/')}>Назад</button>
+            <button onClick={handleBack}>Назад</button>
 
             <button onClick={checkInputs}>Создать транзакцию</button>
         </header>

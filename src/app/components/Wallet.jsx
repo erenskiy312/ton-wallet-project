@@ -1,25 +1,25 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import TonConnect from '@tonconnect/sdk';
 import "./style.css"
-import { useNavigate } from 'react-router-dom';
 
 const tonConnect = new TonConnect()
 
 export default function Wallet () {
 
+    
     const navigate = useNavigate()
-
     const [wallet, setWallet] = useState(null)
     const [balance, setBalance] = useState(null)
-
+    
     useEffect(() => {
         if (wallet) {
             setBalance(wallet.balance)
         }
     }, [wallet])
-
+    
     const connectWallet = async () => {
         try {
             const walletinfo = await tonConnect.getWallets()

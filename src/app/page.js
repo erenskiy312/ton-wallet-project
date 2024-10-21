@@ -5,10 +5,12 @@ import Wallet from "./components/Wallet";
 export default function Home() {
   return (
    <div>
+    <BrowserRouter>
     <Routes>
       <Route path="/" element={<Wallet/>}/>
       <Route path="/transaction" element={<Transaction/>}/>
     </Routes>
+      </BrowserRouter>
    </div>
   );
 }

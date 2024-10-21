@@ -1,6 +1,5 @@
 "use client";
 import localFont from "next/font/local";
-import { BrowserRouter } from "react-router-dom";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,11 +16,9 @@ const geistMono = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <BrowserRouter>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
-      </BrowserRouter>
     </html>
   );
 }
